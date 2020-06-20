@@ -1,0 +1,48 @@
+.card{
+    position: relative;
+    height: 50rem;
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+
+
+    // NOTE: The Following was acting STRANGE here - So I Put it in on the child (card__side)
+    // border-radius: 5px;
+    // overflow: hidden;
+    // box-shadow: 0 4rem 4rem rgba($color: #000000, $alpha: 0.15); 
+
+    &__side{
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+        
+        transition: all .8s ease;
+        backface-visibility: hidden;
+        box-shadow: 0 4rem 4rem rgba($color: #000000, $alpha: 0.15);
+        border-radius: 5px;
+        overflow: hidden;
+        
+        &--front{
+            background-color: $color-white;
+            
+        }
+        &--back{
+            transform: rotateY(180deg);
+            
+            &-1{ background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark); }
+            &-2{ background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark); }
+            &-3{ background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark); }
+        }
+    }
+
+    &:hover &__side--front{
+        transform: rotateY(180deg);
+    }
+
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
+    
+}
