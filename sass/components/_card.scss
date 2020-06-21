@@ -119,4 +119,31 @@
     }
 
 
+    &__cta{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        text-align: center;        
+    }
+
+    &__price-box{
+        color: $color-white;
+
+    }
+
+    &__price-text{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+
+    }
+
+    &__price-value{
+        font-size: 6rem;
+        font-weight: 100;
+        line-height: 6rem;
+    }
+
+
 }

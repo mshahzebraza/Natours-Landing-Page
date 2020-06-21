@@ -135,6 +135,22 @@ body {
   margin-bottom: 8rem;
 }
 
+.u-margin-top-small {
+  margin-top: 1.5rem;
+}
+
+.u-margin-top-medium {
+  margin-top: 4em;
+}
+
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
+.u-margin-top-huge {
+  margin-top: 10rem;
+}
+
 .header {
   height: 95vh;
   background-size: cover;
@@ -255,6 +271,15 @@ body {
 
 .btn--white::after {
   background-color: #fff;
+}
+
+.btn--green {
+  background-color: #55c57a;
+  color: #fff;
+}
+
+.btn--green::after {
+  background-color: #55c57a;
 }
 
 .btn --animated {
@@ -466,6 +491,30 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
+.card__price-box {
+  color: #fff;
+}
+
+.card__price-text {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.card__price-value {
+  font-size: 6rem;
+  font-weight: 100;
+  line-height: 6rem;
+}
+
 .section-about {
   padding: 25rem 0;
   margin-top: -20vh;
@@ -488,7 +537,6 @@ body {
 .section-tours {
   background-color: #f7f7f7;
   margin-top: -10rem;
-  padding: 25rem 0;
-  padding-bottom: 50rem;
+  padding: 25rem 0 15rem 0;
 }
 /*# sourceMappingURL=main.css.map */
