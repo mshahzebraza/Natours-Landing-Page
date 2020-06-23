@@ -1,0 +1,21 @@
+.bg-video{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width: 100% ;
+    height: 100%;
+    opacity: 0.15;
+    overflow: hidden;
+    
+    &__file{
+        width: 100%;
+        height: 100%;
+        // Before object fit it still doesn't cover the full screen beacause it tries to maintain its aspect ratio - Aspect Ratio of the video
+        object-fit: cover;
+    }
+    
+    
+    
+}
