@@ -1,6 +1,8 @@
 
 .btn{
+    border: none;
 
+    &,
     &:link,
     &:visited{
         display: inline-block;
@@ -13,9 +15,11 @@
         font-size: $default-font-size;
     }
 
+    &:focus,
     &:hover{
         transform: translateY(-5px);
         box-shadow: 0 .5rem 1rem rgba($color: $color-black , $alpha: 0.3);
+        outline: none;
         
         &::after{
             transform: scale(1.4,1.6);

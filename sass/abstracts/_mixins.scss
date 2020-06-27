@@ -5,3 +5,17 @@
         clear: both;
     }
 }
+
+
+@mixin pseudo {
+    &{
+        position: relative;
+    }
+
+    &:before,
+    &:after{
+        content: "";
+        display: block;
+        position: absolute;
+    }
+}

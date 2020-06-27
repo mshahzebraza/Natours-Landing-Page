@@ -40,9 +40,10 @@ body{
 .heading-secondary{
 
     font-size: 3.5rem;
+    line-height: 4.5rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: .2rem;
     background: linear-gradient(to right, $color-primary-light, $color-primary-dark) ;    
     display: inline-block;
     -webkit-background-clip: text;
