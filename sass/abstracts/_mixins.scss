@@ -8,10 +8,7 @@
 
 
 @mixin pseudo {
-    &{
-        position: relative;
-    }
-
+    
     &:before,
     &:after{
         content: "";
