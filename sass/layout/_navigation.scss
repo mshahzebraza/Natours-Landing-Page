@@ -18,7 +18,7 @@
         position: fixed;
         top: 6rem;
         right: 6rem;
-        z-index: 2000;   
+        z-index: 25;   
 
     }
 
@@ -75,7 +75,7 @@
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
-        z-index: 1000;
+        z-index: 15;
 
         transition: all .6s ease-in-out ; 
     }
@@ -88,7 +88,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 1500;
+        z-index: 20;
 
         opacity: 0;
         visibility: hidden;
