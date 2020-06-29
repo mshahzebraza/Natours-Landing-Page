@@ -6,6 +6,10 @@
     top: 0;
     left: 0;
     z-index: 30;
+    // display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s ease;
     
     &__content{
         display: table;
@@ -14,11 +18,13 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%) scale(.25);
         border-radius: 3px;
+        overflow: hidden;
+        color: $color-grey-dark;
+        opacity: 0;
+        transition: all .4s ease .2s ; 
         
-        
-        min-height: 50rem;
     }
 
     &__left{
@@ -30,6 +36,7 @@
     &__right{
         display: table-cell;
         width: 66.67%;
+        padding: 5rem;
         vertical-align: middle;
     }
 
@@ -41,7 +48,47 @@
     }
 
     &__text{
+        font-size: 1.4rem;        
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 2px solid $color-grey-light-2;
+        hyphens: auto;
+    }
+
+
+    // FUNCTIONALITY
+    
+    &:target{
+        visibility: visible;
+        opacity: 1;
+
+    }
+
+    &__close{
+
+        &:link,
+        :visited{
+            text-decoration: none;
+            color: inherit;
+            font-size: 4rem;
+            line-height: 1;
+            transition: all .2s ;
+            cursor: pointer;
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+        }
+
         
+        &:hover{
+            color: $color-primary;
+        }
+    }
+
+    &:target &__content{
+        transform: scale(1) translate(-50%,-50%) ;
+        transform-origin: center;;
+        opacity: 1;
     }
 
     // &__media{}
