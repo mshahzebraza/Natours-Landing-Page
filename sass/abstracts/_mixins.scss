@@ -16,3 +16,51 @@
         position: absolute;
     }
 }
+
+// Hardcoded breakpoints
+@mixin respond-phone {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+// Recieves breakpoint
+@mixin respond-at ($breakpoint-value) {
+    @media (max-width: $breakpoint-value){
+        @content;
+    }
+}
+
+
+// MEDIA QUERY MANAGER - with Multiple breakpoints
+
+// "em" units are used instead of "rem" as they are more effective in this case
+// 1em = 16px
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em){     // 600px 
+            @content;
+        }
+    }    
+    
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em){      // 900px
+            @content;
+        }
+    }    
+    
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em){       // 1200px
+            @content;
+        }
+    }    
+
+    @if $breakpoint == big-desk {
+        @media (min-width: 112.5em){    // 1800px
+            @content;
+        }
+    }    
+
+}
