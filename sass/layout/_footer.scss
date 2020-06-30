@@ -4,11 +4,16 @@
     color: $color-grey-light-1;
     font-size: 1.4rem;
 
+    @include respond(tab-land){
+        padding: 8rem 0 4rem;
+    }
+
 
 
     &__logo-box{
         text-align: center;
         margin-bottom: 5rem;
+        
     }
     
     &__logo{
@@ -19,6 +24,14 @@
         border-top: 1px solid $color-grey-dark;;
         padding-top: 3rem;
         display: inline-block;
+        margin-left: 4rem;
+        
+        @include respond(tab-port){
+            margin-left: 0;
+            display: block;
+            text-align: center;
+        }
+        
         // width: 90%;
         // float: left;
     }
@@ -28,6 +41,7 @@
     }
     
     &__item{
+        line-height: 2.2;
         display: inline-block;
         
         &:not(:last-child){
@@ -63,6 +77,16 @@
         float: right;
         padding-top: 3rem;
         border-top: 1px solid $color-grey-dark;
+        margin-right: 4rem;
+        
+        
+        @include respond(tab-port){
+            margin-right: 0;
+            float: none;
+            text-align: center;
+            width: 100%;
+        }
+
     }
     
     

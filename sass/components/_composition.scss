@@ -38,5 +38,48 @@
         transform: scale(.95) translateY(.5rem);
         filter: grayscale(1);
     }
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @include respond(tab-port){
+            
+        &__photo{
+            
+            margin-top: 4rem;
+            width: 33.33%;
+            position: relative;
+            float: left;
+            transform: scale(1.2);
+            
+            &--p1{
+                top: 1rem;
+            }
+            &--p2{
+                transform: scale(1.4);
+                top: -1rem;
+                z-index: 20;
+            }
+            &--p3{
+                top: 2rem;
+                left: 0;
+            }
+
+
+        }
+    }
+
+
+        
 }

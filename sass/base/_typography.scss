@@ -4,7 +4,6 @@ body{
     font-weight: 400;
     line-height: 1.7;
     color: $color-grey-dark;
-    padding: 3rem;
 
 }
 
@@ -16,6 +15,10 @@ body{
     margin-bottom: 6rem;
     backface-visibility: hidden;
     /* Removes the jerk with animations */
+    
+    @include respond(phone){
+        margin-bottom: 3rem;
+    }
 
     
     &--main{
@@ -24,6 +27,12 @@ body{
         font-weight: 400;
         letter-spacing: 3.5rem;
         animation: moveInRight .6s ease-in ;
+        
+        @include respond(phone){
+            letter-spacing: 0.5rem;
+            line-height: 1.5;
+        }
+        
     }
     
     &--sub{
@@ -33,6 +42,12 @@ body{
         letter-spacing: 1.5rem;
         word-spacing: 1.5rem;
         animation: moveInLeft .6s ease-in ;
+
+        @include respond(phone){
+            letter-spacing: .5rem;
+            word-spacing: unset;
+        }
+        
     }
     
 }
@@ -50,6 +65,12 @@ body{
     background-clip: text;
     color: transparent;
     transition: all .2s ease;
+
+    @include respond(tab-port){
+        max-width: 65rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
 
     &:hover{
         transform: skewY(2deg) skewX(15deg) scale(1.1);

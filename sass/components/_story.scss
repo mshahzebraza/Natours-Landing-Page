@@ -9,6 +9,14 @@
     font-size: $default-font-size;
     transform: skewX(-15deg);
     cursor: pointer;
+    
+    @include respond(tab-port){
+        transform: skew(0);
+        width: 100%;
+        padding: 4rem;
+    }
+
+
 
     @include clearfix;
 
@@ -18,12 +26,19 @@
         // overflow: hidden;
         background-color: $color-black;
         float: left;
+
         -webkit-shape-outside: circle(50% at 50% 50%);
         -webkit-clip-path: circle(50% at 50% 50%);
         shape-outside: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
+
         transform: translateX(-3rem) skewX(15deg);
         position: relative;
+
+        @include respond(tab-port){
+            transform: skew(0);
+            margin: 2rem;
+        }
 
     }
 
@@ -68,6 +83,11 @@
 
     &__text{
         transform: skewX(15deg);
+        
+        @include respond(tab-port){
+            transform: skew(0);
+        }
+
         // Somehow vertical align it middle as it gets UGLY in case of less text.
         
     }

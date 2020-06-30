@@ -1,3 +1,20 @@
+/* 
+
+    0 - 600px:              Phone
+    600px - 900px:          Tablet-Portrait
+    900px - 1200px:         Tablet-Landscape
+    [1200px - 1800px]:      is where our normal styles apply
+    1800px + :              Big Desktop
+
+    $breakpoint argument choices
+    -phone
+    -tab-port
+    -tab-land
+    -big-desk
+
+ORDER: Base + typography > General Layout + Grid > Page Layout > Components
+    
+*/
 *,
 *::before,
 *::after {
@@ -30,6 +47,13 @@ html {
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+}
+
+@media (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
 }
 
 @keyframes moveInRight {
@@ -76,7 +100,6 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #666;
-  padding: 3rem;
 }
 
 .heading-primary {
@@ -87,12 +110,25 @@ body {
   /* Removes the jerk with animations */
 }
 
+@media (max-width: 37.5em) {
+  .heading-primary {
+    margin-bottom: 3rem;
+  }
+}
+
 .heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
   animation: moveInRight .6s ease-in;
+}
+
+@media (max-width: 37.5em) {
+  .heading-primary--main {
+    letter-spacing: 0.5rem;
+    line-height: 1.5;
+  }
 }
 
 .heading-primary--sub {
@@ -102,6 +138,13 @@ body {
   letter-spacing: 1.5rem;
   word-spacing: 1.5rem;
   animation: moveInLeft .6s ease-in;
+}
+
+@media (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: .5rem;
+    word-spacing: unset;
+  }
 }
 
 .heading-secondary {
@@ -116,6 +159,14 @@ body {
   background-clip: text;
   color: transparent;
   transition: all .2s ease;
+}
+
+@media (max-width: 56.25em) {
+  .heading-secondary {
+    max-width: 65rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 }
 
 .heading-secondary:hover {
@@ -154,6 +205,12 @@ body {
   margin-bottom: 8rem !important;
 }
 
+@media (max-width: 56.25em) {
+  .u-margin-bottom-big {
+    margin-bottom: 6rem !important;
+  }
+}
+
 .u-margin-bottom-huge {
   margin-bottom: 10rem !important;
 }
@@ -183,6 +240,12 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
+@media (max-width: 37.5em) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+}
+
 .header__logo-box {
   position: absolute;
   top: 4rem;
@@ -201,6 +264,12 @@ body {
   text-align: center;
 }
 
+@media (max-width: 37.5em) {
+  .header__text-box {
+    top: 45%;
+  }
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
@@ -208,6 +277,19 @@ body {
 
 .row:not(:last-child) {
   margin-bottom: 8rem;
+}
+
+@media (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 4rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .row {
+    max-width: 90%;
+  }
 }
 
 .row:after {
@@ -222,6 +304,15 @@ body {
 
 .row [class^="col-"]:not(:last-child) {
   margin-right: 6rem;
+}
+
+@media (max-width: 56.25em) {
+  .row [class^="col-"] {
+    margin-right: 0 !important;
+    margin-bottom: 4rem;
+    float: none;
+    width: 100% !important;
+  }
 }
 
 .row .col-1-of-2 {
@@ -255,6 +346,12 @@ body {
   font-size: 1.4rem;
 }
 
+@media (max-width: 75em) {
+  .footer {
+    padding: 8rem 0 4rem;
+  }
+}
+
 .footer__logo-box {
   text-align: center;
   margin-bottom: 5rem;
@@ -268,6 +365,15 @@ body {
   border-top: 1px solid #666;
   padding-top: 3rem;
   display: inline-block;
+  margin-left: 4rem;
+}
+
+@media (max-width: 56.25em) {
+  .footer__navigation {
+    margin-left: 0;
+    display: block;
+    text-align: center;
+  }
 }
 
 .footer__list {
@@ -275,6 +381,7 @@ body {
 }
 
 .footer__item {
+  line-height: 2.2;
   display: inline-block;
 }
 
@@ -303,6 +410,16 @@ body {
   float: right;
   padding-top: 3rem;
   border-top: 1px solid #666;
+  margin-right: 4rem;
+}
+
+@media (max-width: 56.25em) {
+  .footer__copyright {
+    margin-right: 0;
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
 }
 
 .navigation {
@@ -582,6 +699,28 @@ body {
   filter: grayscale(1);
 }
 
+@media (max-width: 56.25em) {
+  .composition__photo {
+    margin-top: 4rem;
+    width: 33.33%;
+    position: relative;
+    float: left;
+    transform: scale(1.2);
+  }
+  .composition__photo--p1 {
+    top: 1rem;
+  }
+  .composition__photo--p2 {
+    transform: scale(1.4);
+    top: -1rem;
+    z-index: 20;
+  }
+  .composition__photo--p3 {
+    top: 2rem;
+    left: 0;
+  }
+}
+
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
@@ -744,6 +883,57 @@ body {
   font-size: 6rem;
   font-weight: 100;
   line-height: 6rem;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 56.25em) {
+  .card {
+    height: auto;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+  }
+  .card__side {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0;
+    border-radius: 0;
+  }
+  .card__side--back {
+    transform: rotateY(0);
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    margin-top: -6rem;
+  }
+  .card:hover .card__side--front {
+    transform: rotateY(0);
+  }
+  .card:hover .card__side--back {
+    transform: rotateY(0);
+  }
+  .card__picture {
+    height: 23rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  .card__details {
+    padding: 2rem 0 6rem;
+  }
+  .card__cta {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    text-align: center;
+    padding: 6rem 0 4rem;
+  }
+  .card__price-value {
+    font-size: 6rem;
+    line-height: 6rem;
+    margin-bottom: 4rem;
+  }
 }
 
 .story {
@@ -757,6 +947,14 @@ body {
   font-size: 1.6rem;
   transform: skewX(-15deg);
   cursor: pointer;
+}
+
+@media (max-width: 56.25em) {
+  .story {
+    transform: skew(0);
+    width: 100%;
+    padding: 4rem;
+  }
 }
 
 .story:after {
@@ -776,6 +974,13 @@ body {
   clip-path: circle(50% at 50% 50%);
   transform: translateX(-3rem) skewX(15deg);
   position: relative;
+}
+
+@media (max-width: 56.25em) {
+  .story__shape {
+    transform: skew(0);
+    margin: 2rem;
+  }
 }
 
 .story__picture {
@@ -813,6 +1018,12 @@ body {
 
 .story__text {
   transform: skewX(15deg);
+}
+
+@media (max-width: 56.25em) {
+  .story__text {
+    transform: skew(0);
+  }
 }
 
 .story:not(:last-child) {
@@ -861,6 +1072,12 @@ body {
   box-shadow: none;
 }
 
+@media (max-width: 56.25em) {
+  .form__input {
+    width: 100%;
+  }
+}
+
 .form__input:focus {
   border-color: #55c57a;
   box-shadow: 0.5rem 1.2rem 1.5rem rgba(0, 0, 0, 0.15);
@@ -898,6 +1115,16 @@ body {
 .form__radio-group {
   width: 50%;
   float: left;
+}
+
+@media (max-width: 56.25em) {
+  .form__radio-group {
+    float: none;
+    width: 100%;
+  }
+  .form__radio-group:not(:last-child) {
+    margin-bottom: 3rem;
+  }
 }
 
 .form__radio-input {
@@ -1027,6 +1254,12 @@ body {
   background-color: #f7f7f7;
 }
 
+@media (max-width: 37.5em) {
+  .section-about {
+    padding: 20rem 0;
+  }
+}
+
 .section-features {
   padding: 20rem 0;
   background-size: cover;
@@ -1034,6 +1267,12 @@ body {
   background-size: cover;
   margin-top: -10rem;
   transform: skewY(-7deg);
+}
+
+@media (max-width: 37.5em) {
+  .section-features {
+    padding: 10rem 0;
+  }
 }
 
 .section-features > * {
@@ -1046,9 +1285,21 @@ body {
   padding: 25rem 0 15rem 0;
 }
 
+@media (max-width: 37.5em) {
+  .section-tours {
+    padding: 20rem 0 10rem;
+  }
+}
+
 .section-stories {
   padding: 15rem 0;
   position: relative;
+}
+
+@media (max-width: 37.5em) {
+  .section-stories {
+    padding: 10rem 0;
+  }
 }
 
 .section-book {
@@ -1061,12 +1312,35 @@ body {
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.25);
-  min-height: 50rem;
+}
+
+@media (max-width: 75em) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 70%, transparent 50%), url("../img/nat-10.jpg");
+  }
+}
+
+@media (max-width: 56.25em) {
+  .book {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%, transparent 100%), url("../img/nat-10.jpg");
+  }
 }
 
 .book__form {
   width: 50%;
   padding: 6rem;
+}
+
+@media (max-width: 75em) {
+  .book__form {
+    width: 70%;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .book__form {
+    width: 100%;
+  }
 }
 
 .spacer {

@@ -33,6 +33,23 @@
 
 
 // MEDIA QUERY MANAGER - with Multiple breakpoints
+/* 
+
+    0 - 600px:              Phone
+    600px - 900px:          Tablet-Portrait
+    900px - 1200px:         Tablet-Landscape
+    [1200px - 1800px]:      is where our normal styles apply
+    1800px + :              Big Desktop
+
+    $breakpoint argument choices
+    -phone
+    -tab-port
+    -tab-land
+    -big-desk
+
+ORDER: Base + typography > General Layout + Grid > Page Layout > Components
+    
+*/
 
 // "em" units are used instead of "rem" as they are more effective in this case
 // 1em = 16px

@@ -2,8 +2,20 @@
     max-width: $grid-width;
     margin: 0 auto;
     
+    
     &:not(:last-child){
         margin-bottom: $gutter-vertical;
+    }
+
+    @include respond(tab-port){
+        max-width: 50rem;
+        padding: 0 4rem;
+
+    }
+
+    @include respond(phone){
+        // padding: 0 4rem;
+        max-width: 90%;
     }
     
     @include clearfix;
@@ -12,16 +24,17 @@
 
         float: left;
         
-        // // Typography
-        // background-color: orangered;
-        // padding: 2rem;
-        // text-align: center;
-        // color: $color-white;
-        // font-size: 12px;
-    
         &:not(:last-child){
             margin-right: $gutter-horizontal;
         }
+        
+        @include respond (tab-port){
+            margin-right: 0 !important;
+            margin-bottom: $gutter-vertical-small;
+            float: none;
+            width: 100% !important;
+        }
+
     }
     
     .col-1-of-2{

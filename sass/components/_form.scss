@@ -29,6 +29,10 @@
         
         outline: none;
         box-shadow: none;
+
+        @include respond(tab-port){
+            width: 100%;
+        }
         
         &:focus{
             border-color: $color-primary;
@@ -74,6 +78,16 @@
         width: 50%;
         // display: inline-block;
         float: left;
+
+        @include respond(tab-port){
+            float: none;
+            width: 100%;
+
+            &:not(:last-child){
+                margin-bottom: 3rem;
+            }
+            
+        }
         
     }
 
