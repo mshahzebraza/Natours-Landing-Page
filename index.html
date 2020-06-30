@@ -405,7 +405,27 @@
     <footer class="footer">
 
         <div class="footer__logo-box u-margin-bottom-big">
-            <img src="./img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+            
+            <!-- <img src="./img/logo-green-2x.png" alt="Full logo" class="footer__logo">  -->
+            <!-- width already spec'd : 15rem -->
+
+            <!-- Step 01-Responsive Image : Density Switching -->
+            <!-- <img srcset="./img/logo-green-2x.png 2x, ./img/logo-green-1x.png 1x" src="./img/logo-green-2x.png" alt="Full logo" class="footer__logo"> -->
+
+            <!-- Step 02-Responsive Image : "Desity Switching" Combined with "Art Direction" -->
+            <picture class="footer__logo">
+
+                <!-- For smaller than 600px, browser is forced to do this -->
+                <source srcset="./img/logo-green-small-1x.png 1x, ./img/logo-green-small-2x.png 2x" media="max-width: 37.5em">
+                    
+                <!-- Default width: larger than 600px -->
+                <img srcset="./img/logo-green-2x.png 2x, ./img/logo-green-1x.png 1x" src="./img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+
+                <!-- Note that inside each source (2 of them) we use "srcset" attribute to achieve density switching as well  -->
+                
+            </picture>
+
+            
         </div>
         
         <div class="row">
@@ -432,43 +452,5 @@
 
     </footer>
 
- <!--    <section class="grid-test">
-
-        <div class="row">
-            <div class="col-1-of-2">Col 1 of 2</div>
-            <div class="col-1-of-2">Col 1 of 2</div>
-        </div>
-
-        <div class="row">
-            <div class="col-1-of-3">Col 1 of 3</div>
-            <div class="col-1-of-3">Col 1 of 3</div>
-            <div class="col-1-of-3">Col 1 of 3</div>
-        </div>
-
-        <div class="row">
-            <div class="col-1-of-3">Col 1 of 3</div>
-            <div class="col-2-of-3">Col 2 of 3</div>
-        </div>
-
-        <div class="row">
-            <div class="col-1-of-4">Col 1 of 4</div>
-            <div class="col-1-of-4">Col 1 of 4</div>
-            <div class="col-1-of-4">Col 1 of 4</div>
-            <div class="col-1-of-4">Col 1 of 4</div>
-        </div>
-
-        <div class="row">
-            <div class="col-1-of-4">Col 1 of 4</div>
-            <div class="col-1-of-4">Col 1 of 4</div>
-            <div class="col-2-of-4">Col 2 of 4</div>
-        </div>
-
-        <div class="row">
-            <div class="col-1-of-4">Col 1 of 4</div>
-            <div class="col-3-of-4">Col 3 of 4</div>
-        </div>
-        
-    </section> -->
-    
 </body>
 </html>

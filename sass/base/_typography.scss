@@ -68,8 +68,6 @@ body{
 
     @include respond(tab-port){
         max-width: 65rem;
-        margin-left: 3rem;
-        margin-right: 3rem;
     }
 
     &:hover{
